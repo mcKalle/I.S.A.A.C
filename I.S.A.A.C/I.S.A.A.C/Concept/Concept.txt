@@ -1,0 +1,62 @@
+﻿
+
+------------------------
+SpeechComprehension:
+
+- Erkennung ähnlicher und unnötiger Wörter (bei geschriebenem Input entfernen von sonderzeichen und erkennen des satzendes)
+- Definition der Sonderzeichen für schriftlichen Input (über Konfig)
+- Satzaufbau und Interpretation des Textes
+
+-----------------------
+
+------------------------
+Speaking:
+
+- Serialisierbare Klassen (für Frage und Kommandos)
+- Fragen, mit einer Auswahl an Antworten die immer zufällig gewählt werden.
+- Kommandos, mit einer Auswahl an Antworten die immer zufällig gewählt werden und dem Kommando das ausgeführt werden soll.
+(dafür werden fixe Kommandos festgelegt wie "SearchFor, OpenProgramm, TellJoke, HowOldIs, Learn or Memorize usw..."
+damit kann zu einer beliebigen Aussage eine beliebige aktion mit einer Antwort ausgeführt werden
+Für Suchanfragen wird ein Parameter benötigt, der den Suchbegriff beinhaltet (z.B.: ISAAC, Suche nach {param})
+
+- Konfiguration des Assistentennamens
+- Konfiguration der Ansprechart (z.B. "Sir" oder "Philipp")
+
+- Erkennung wenn die Ordnerstruktur des "Gehirns" angegriffen wird --> Alarm bei ISAAC
+
+- Neue Fragen bzw Kommandos lernen (über Sprache und über ein Tool)
+- Fragen mit beliebig vielen Folgefragen bzw. Kommandos verknüpfen (über Sprache und über ein Tool)
+
+- Grundinteraktion:
+ISAAC stellt eine Frage (größtenteils ja oder nein Frage) --> Antwort auswerten und interagieren:
+z.B.: (Nach dem etwas erzählt wurde) Soll ich danach suchen, Sir? Ja, bitte. oder Nein Danke Isaac.
+-----------------------
+
+-----------------------
+Memory:
+- Merken welche Personen mit ISAAC sprechen (nach Namen fragen)
+- Fragen mit wem er spricht
+- Daten und Fakten merken
+- Speicher in Dateisystem
+- Aktuelle Daten in Gespräch einbauen
+- Archiv aller Gesprächsinformationen (Personen, Aktionen, Fragen, Aussprache)
+-----------------------
+
+------------------------
+Aussprache:
+
+ - Kommando für ein falsch ausgesprochenes Wort
+ - Wort schriftlich eingeben, wie es ausgesprochen wird
+ - ISAAC wiederholt die neue Aussprache Buchstabe für Buchstabe mittels dem Buchstabieralphabet
+-----------------------
+
+
+
+------------------------
+WordLearning:
+
+- Fähigkeit Synonyme für andere Wörter zu erkennen (über Sprache und über ein Tool)
+- Fähigkeit zu erlenen wie Wörter ausgesprochen werden sollen (über Sprache und über ein Tool)
+- Bei unbekannten Wörtern nachfragen, was das Wort bedeutet und wie es ausgesprochen wird. --> Danach einen Test ob das Wort auch richtig ausgesprochen wurde.
+- Fähigkeit den Sinn der Wörter zu verstehen??
+-----------------------

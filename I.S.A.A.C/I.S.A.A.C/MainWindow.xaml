@@ -1,0 +1,10 @@
+﻿<Window x:Class="ISAAC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ISAAC" Height="500" Width="800" Background="GhostWhite">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button Content="Speak" Height="100" Width="100" Click="ButtonClick1" />
+        <TextBox HorizontalAlignment="Left" Margin="10,436,0,0" TextWrapping="Wrap" Text="" x:Name="txtTalkToIsaac" VerticalAlignment="Top" Width="656"/>
+        <Button Content="Talk to Isaac" HorizontalAlignment="Left"  Height="23" Margin="671,433,0,0" x:Name="BtnTalkToIsaac"  VerticalAlignment="Top" Width="100" Click="BtnTalkToIsaacClick"/>
+    </Grid>
+</Window>
