@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Reflection;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using ISAAC.Networking;
+using ISAAC.Utility;
+using NLog;
 
 namespace ISAAC
 {
@@ -8,6 +12,8 @@ namespace ISAAC
 	{
 		public string Name { get; set; }
 		public string Introduction { get; set; }
+
+		public TcpServerClient TcpServerClient { get; set; }
 
 		/// <summary>
 		/// Sets or gets the interaction modus (f.e. the commando is written and the answer is spoken)
@@ -19,8 +25,18 @@ namespace ISAAC
 		private SpeechRecognitionEngine _speechEngine;
 		private SpeechSynthesizer _speechSynthesizer;
 
+		private Logger _logger;
+
 		public IntelligentSpeakingAndAssistingComputer()
 		{
+			_logger = LogManager.GetLogger("mainLogger");
+
+			_logger.Info(String.Format("--- Starting ISAAC v{0} ---", Assembly.GetExecutingAssembly().GetName().Version));
+			_logger.Info("Initializing string constants");
+			StringConstants.InitializeConstants();
+
+			_logger.Info("Creating Networking Components");
+			TcpServerClient = new TcpServerClient(9999);
 
 			_speechEngine = new SpeechRecognitionEngine();
 			_speechEngine.SpeechRecognized += SpeechRecognized;

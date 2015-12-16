@@ -7,8 +7,8 @@ using System.Windows;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("SpeechBot")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("I.S.A.A.C")]
+[assembly: AssemblyDescription("Intelligent Speaking And Assisting Computer")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SpeechBot")]
