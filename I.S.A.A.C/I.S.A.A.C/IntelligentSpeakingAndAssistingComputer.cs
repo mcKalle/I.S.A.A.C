@@ -2,6 +2,8 @@
 using System.Reflection;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using ISAAC.Booting;
+using ISAAC.Brain;
 using ISAAC.Networking;
 using ISAAC.Utility;
 using NLog;
@@ -13,7 +15,9 @@ namespace ISAAC
 		public string Name { get; set; }
 		public string Introduction { get; set; }
 
-		public TcpServerClient TcpServerClient { get; set; }
+		public Mind Brain { get; set; }
+		public BootManager BootManager { get; set; }
+		public NetworkManager NetworkManager { get; set; }
 
 		/// <summary>
 		/// Sets or gets the interaction modus (f.e. the commando is written and the answer is spoken)
@@ -32,18 +36,14 @@ namespace ISAAC
 			_logger = LogManager.GetLogger("mainLogger");
 
 			_logger.Info(String.Format("--- Starting ISAAC v{0} ---", Assembly.GetExecutingAssembly().GetName().Version));
-			_logger.Info("Initializing string constants");
-			StringConstants.InitializeConstants();
 
-			_logger.Info("Creating Networking Components");
-			TcpServerClient = new TcpServerClient(9999);
+			Initialize();
 
-			_speechEngine = new SpeechRecognitionEngine();
-			_speechEngine.SpeechRecognized += SpeechRecognized;
+			_speechSynthesizer = new SpeechSynthesizer
+			{
+				Rate = 1
+			};
 
-			_speechSynthesizer = new SpeechSynthesizer();
-
-			_speechSynthesizer.Rate = 1;
 
 			Choices phrases = new Choices();
 			phrases.Add("Hallo Isaac");
@@ -59,6 +59,25 @@ namespace ISAAC
 			_speechEngine.LoadGrammar(g);
 
 			//_speechEngine.RecognizeAsync();
+		}
+
+		private void Initialize()
+		{
+            _logger.Info("+++++++++++++ Starting I.S.A.A.C v1.0 +++++++++++++");
+            _logger.Info("--- Intelligent Speaking and Assisting Computer ---");
+
+            _logger.Info("Initializing string constants");
+			StringConstants.InitializeConstants();
+
+			_logger.Info("Creating Networking Components");
+			NetworkManager = new NetworkManager();
+            _logger.Info("Networking Components initialized");
+            _logger.Info("Creating BootManager Components");
+			BootManager = new BootManager();
+            _logger.Info("BootManager initialized");
+
+            _speechEngine = new SpeechRecognitionEngine();
+			_speechEngine.SpeechRecognized += SpeechRecognized;
 		}
 
 		private void SpeechRecognized(object senderIn, SpeechRecognizedEventArgs eventArgsIn)
