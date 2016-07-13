@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace ISAAC.Brain.Speaking
+namespace ISAAC.SpeakEngine.Speaking
 {
     
     public class Question

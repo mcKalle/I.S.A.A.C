@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ISAAC.Brain.Speaking
+namespace ISAAC.SpeakEngine.Speaking
 {
     class Randomizer
     {

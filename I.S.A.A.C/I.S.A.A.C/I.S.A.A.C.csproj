@@ -57,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Brain\Action\ActionController.cs" />
+    <Compile Include="Brain\BrainController.cs" />
+    <Compile Include="Brain\Memorizing\Memory.cs" />
+    <Compile Include="SpeakEngine\VoiceController.cs" />
     <Compile Include="Utility\StringConstants.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -66,11 +70,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Brain\Memory\WordPronunciation\Pronunciation.cs" />
-    <Compile Include="Brain\Memory\WordPronunciation\SpellingAlphabet.cs" />
-    <Compile Include="Brain\Speaking\Command.cs" />
-    <Compile Include="Brain\Speaking\Question.cs" />
-    <Compile Include="Brain\Speaking\Randomizer.cs" />
+    <Compile Include="Brain\Memorizing\WordPronunciation\Pronunciation.cs" />
+    <Compile Include="Brain\Memorizing\WordPronunciation\SpellingAlphabet.cs" />
+    <Compile Include="SpeakEngine\Speaking\Command.cs" />
+    <Compile Include="SpeakEngine\Speaking\Question.cs" />
+    <Compile Include="SpeakEngine\Speaking\Randomizer.cs" />
     <Compile Include="IntelligentSpeakingAndAssistingComputer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -129,11 +133,11 @@
     <Folder Include="Brain\Action\Basics\" />
     <Folder Include="Brain\Action\Research\" />
     <Folder Include="Brain\Action\Windows\" />
-    <Folder Include="Brain\Memory\ActionHistory\" />
-    <Folder Include="Brain\Memory\People\" />
-    <Folder Include="Brain\Memory\QuestionHistory\" />
-    <Folder Include="Brain\SpeechComprehension\" />
-    <Folder Include="Brain\WordLearning\" />
+    <Folder Include="Brain\Memorizing\ActionHistory\" />
+    <Folder Include="Brain\Memorizing\People\" />
+    <Folder Include="Brain\Memorizing\QuestionHistory\" />
+    <Folder Include="SpeakEngine\SpeechComprehension\" />
+    <Folder Include="SpeakEngine\WordLearning\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Concept\Concept.txt">

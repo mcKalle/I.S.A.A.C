@@ -1,14 +1,14 @@
 ﻿
 using System.Collections.Generic;
 
-namespace ISAAC.Brain.Memory.WordPronunciation
+namespace ISAAC.Brain.Memorizing.WordPronunciation
 {
 	public static class SpellingAlphabet
 	{
 		static Dictionary<char, string> spellingAlphabetDictionary;
 		static bool isInitialized;
 
-		public static string GetSpellingWord(char letterIn)
+		public static string GetSpellingWord(char letter)
 		{
 			if (!isInitialized)
 			{
@@ -16,7 +16,7 @@ namespace ISAAC.Brain.Memory.WordPronunciation
 				isInitialized = true;
 			}
 
-			return spellingAlphabetDictionary[letterIn];
+			return spellingAlphabetDictionary[letter];
 		}
 
 		private static void Initialize()

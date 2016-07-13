@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ISAAC.SpeakEngine.Speaking;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Xml.Serialization;
 
-using ISAAC.Brain.Speaking;
 
 namespace ISAAC
 {
@@ -28,11 +28,12 @@ namespace ISAAC
                 "Danke, sehr gut", "Wunderbar!" };
 
             XmlSerializer xml = new XmlSerializer(typeof(Question));
-            xml.Serialize(new StreamWriter(@"C:\Temp\Question1.xml"), q);
+            xml.Serialize(new StreamWriter(Path.GetTempPath() + "\\Question1.xml"), q);
         }
 
         private void ButtonClick1(object sender, RoutedEventArgs e)
         {
+            
             _isaac.Introduce();
         }
 
