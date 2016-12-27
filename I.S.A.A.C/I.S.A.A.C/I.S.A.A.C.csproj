@@ -57,16 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
     <Compile Include="Brain\Action\ActionController.cs" />
     <Compile Include="Brain\BrainController.cs" />
     <Compile Include="Brain\Memorizing\Memory.cs" />
     <Compile Include="SpeakEngine\VoiceController.cs" />
-=======
     <Compile Include="Booting\BootManager.cs" />
     <Compile Include="Brain\Mind.cs" />
     <Compile Include="Networking\NetworkManager.cs" />
->>>>>>> origin/master
     <Compile Include="Utility\StringConstants.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
