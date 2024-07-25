@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
@@ -41,11 +42,20 @@ namespace ISAAC
 
 			_speechSynthesizer = new SpeechSynthesizer
 			{
-				Rate = 1
+				Rate = 1,
+                
 			};
 
+            foreach (var v in _speechSynthesizer.GetInstalledVoices().Select(v => v.VoiceInfo))
+            {
+                Console.WriteLine("Name:{0}, Gender:{1}, Age:{2}",
+                  v.Name, v.Gender, v.Age);
+            }
 
-			Choices phrases = new Choices();
+            _speechSynthesizer.SelectVoice("Microsoft Hedda Desktop");
+
+            
+            Choices phrases = new Choices();
 			phrases.Add("Hallo Isaac");
 			phrases.Add("Wie geht es dir");
 			phrases.Add("Magst du mich");
